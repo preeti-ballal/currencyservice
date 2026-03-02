@@ -4,10 +4,12 @@ import com.preetiballal.myprojects.currencyservice.dto.LiveAPIResponse;
 import com.preetiballal.myprojects.currencyservice.model.ExchangeRate;
 import com.preetiballal.myprojects.currencyservice.repository.ExchangeRateRepository;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
 
 @Service
 public class CurrencyService {
@@ -50,7 +52,7 @@ public class CurrencyService {
             BigDecimal liveRate = response.getConversion_rates().get(to);
             
             // Save to DB so we don't have to call the API again for this pair
-            exRepository.save(new ExchangeRate(null, from, to, liveRate));
+            exRepository.save(new ExchangeRate(null, from, to, liveRate,LocalDateTime.now()));
             return liveRate;
         }
 
