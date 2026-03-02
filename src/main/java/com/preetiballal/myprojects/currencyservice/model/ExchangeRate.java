@@ -1,6 +1,7 @@
 package com.preetiballal.myprojects.currencyservice.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,6 @@ public class ExchangeRate {
     private String fromCurrency;
     private String toCurrency;
     private BigDecimal rate; 
-    
+    private LocalDateTime lastUpdated;
     
 }
