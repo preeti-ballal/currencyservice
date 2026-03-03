@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  currency-app:
+    build: .
+    container_name: currency-app
+    ports:
+      - "8081:8081"
+    environment:
+      - API_EXCHANGERATE_KEY=0ebe82e0216e065b303a8a03
+    restart: always
