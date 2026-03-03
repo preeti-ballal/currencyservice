@@ -4,7 +4,6 @@ import com.preetiballal.myprojects.currencyservice.dto.LiveAPIResponse;
 import com.preetiballal.myprojects.currencyservice.model.ExchangeRate;
 import com.preetiballal.myprojects.currencyservice.repository.ExchangeRateRepository;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import java.math.BigDecimal;
