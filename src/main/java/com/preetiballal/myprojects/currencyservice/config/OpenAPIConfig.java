@@ -1,10 +1,9 @@
 package com.preetiballal.myprojects.currencyservice.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenAPIConfig {
@@ -13,7 +12,6 @@ public class OpenAPIConfig {
         return new OpenAPI()
                 .info(new Info()
                 .title("Currency Conversion API")
-                .version("1.0")
-                .description("API for converting currency using ExchangeRate-API"));
+                .version("1.0"));
     }
 }
