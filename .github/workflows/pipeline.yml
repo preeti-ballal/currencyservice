@@ -21,5 +21,4 @@ jobs:
         cache: maven
 
     - name: Build and Test with Maven
-      # We add -DskipTests=false to ensure it actually runs your JUnit tests!
       run: ./mvnw -B clean verify
