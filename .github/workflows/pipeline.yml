@@ -64,7 +64,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=preeti-ballal_currencyservice
-            -Dsonar.organization=preeti-ballal
+            -Dsonar.organization=preeti-workspace
 
   # 4. THE SECURITY GUARD: Scans for vulnerable libraries (Snyk)
   security_scan:
