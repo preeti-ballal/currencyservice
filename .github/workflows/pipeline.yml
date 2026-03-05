@@ -1,5 +1,4 @@
 name: Java CI Quality Guard
-
 on:
   push:
     branches: [ "main" ]
@@ -22,3 +21,14 @@ jobs:
 
     - name: Build and Test with Maven
       run: ./mvnw -B clean verify
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Snyk Security Scan
+      uses: snyk/actions/maven@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
