@@ -68,14 +68,10 @@ jobs:
           path: target/
 
       - name: Official SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v7.0.0
+        uses: SonarSource/sonarqube-scan-action@a31c9398be7ace6bbfaf30c0bd5d415f843d45e9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=preeti-ballal_currencyservice
-            -Dsonar.organization=preeti-workspace
 
   # 4. THE SECURITY GUARD: Scans for vulnerable libraries (Snyk)
   security_scan:
