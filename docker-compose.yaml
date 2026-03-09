@@ -6,5 +6,5 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - API_EXCHANGERATE_KEY=0ebe82e0216e065b303a8a03
+      - API_EXCHANGERATE_KEY=${API_EXCHANGERATE_KEY}
     restart: always
